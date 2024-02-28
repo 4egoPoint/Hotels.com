@@ -1,0 +1,20 @@
+
+.list{
+   width: 100%;
+   .list__wrapper{
+      width: 1220px;
+      margin: 0 auto;
+      display: flex;
+      gap: 20px;
+      .list__box{
+         flex: 5;
+         display: flex;
+         width: 100%;
+         .list__sidebar{flex: 1;}
+         .list__list{
+            flex: 3;
+         }
+      }
+      .list__holder{flex: 1;}
+   }
+}

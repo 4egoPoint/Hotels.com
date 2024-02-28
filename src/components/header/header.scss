@@ -23,7 +23,10 @@
          .header__logo {
             cursor: pointer;
             padding: 10px;
-
+            text-decoration: none;
+            color: black;
+            font-size: 30px;
+            font-weight: bold;
             span {
                font-size: 15px;
             }

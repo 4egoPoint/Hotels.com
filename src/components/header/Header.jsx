@@ -5,6 +5,7 @@ import { IoMdDownload } from "react-icons/io";
 import "./header.scss"
 import { useState } from "react";
 import Nav from "./Nav";
+import { Link } from "react-router-dom";
 
 const routesArr = [
    {
@@ -39,12 +40,12 @@ const routesArr = [
 
 const Header = () => {
    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-   const [isSignInOpen, setIsSignInOpen] = useState(true)
+   const [isSignInOpen, setIsSignInOpen] = useState(false)
    return (
       <div className="header">
          <div className="header__wrapper">
             <div className="header__logo-bar">
-               <h1 className="header__logo">Hotels<span>.com</span></h1>
+               <Link to="/" className="header__logo">Hotels<span>.com</span></Link>
                <button onClick={() => setIsDropdownOpen(!isDropdownOpen)} className="header__dropdown">Shop travel {isDropdownOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}</button>
                {
                   isDropdownOpen ? <ul className="header__droped-menu">
