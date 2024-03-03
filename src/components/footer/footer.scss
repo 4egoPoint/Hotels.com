@@ -1,0 +1,39 @@
+
+.footer{
+   margin-top: 30px;
+   width: 100%;
+   .footer__wrapper{
+      width: 1220px;
+      margin: auto;
+      .footer__title{
+         margin: 20px 0;
+      }
+      .footer__box{
+         display: flex;
+         justify-content: space-between;
+         .footer__column{
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            .footer__subtitle{}
+            .footer__item{
+               padding: 5px 0;
+               color: rgb(85, 123, 234);
+               font-size: 13px;
+               cursor: pointer;
+               &:hover{
+                  text-decoration: underline;
+               }
+            }
+         }
+      }
+      .footer__text{
+         margin-top: 20px;
+         border-top: 1px solid rgb(186, 184, 184);
+         padding: 20px 0 40px 0;
+         color: rgb(80, 80, 80);
+         font-size: 12px;
+      }
+   }
+}

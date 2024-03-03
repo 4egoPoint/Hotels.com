@@ -2,8 +2,11 @@
 
 import Sidebar from "../sidebar/Sidebar"
 import "./list.scss"
+import { useSelector } from "react-redux"
 
 const List = () => {
+   const roomsArr = useSelector(state=> state.roomsList)
+   console.log(roomsArr)
    return (
       <div className="list">
          <div className="list__wrapper">
