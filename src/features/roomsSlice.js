@@ -10,9 +10,20 @@ const initialState = [
       hotelImages: [""],
       hotelRating: 9.2,//rating from 1 to 10
       minCostPerNight: 200,
+      priceOff: 0,
+      paymentType: "",
       hotelDescription: "",
       hotelStarsCounter: 4,
-      hotelRoomsArr: [],
+      hotelRoomsArr: [
+         {
+            id:1,
+            name:"",
+            price:100,
+            typeOfBed:"King bad",
+            area: 13,// how many sq m
+            howManyLeft: 3,
+         }
+      ],
       hotelReviews: 10,
       meals: {
          isBreakfastIncluded: false,

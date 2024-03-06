@@ -4,7 +4,24 @@ import { createSlice } from '@reduxjs/toolkit'
 export const filtersSlice = createSlice({
    name: 'filters',
    initialState: {
-      value: 0
+      sortBy: "",//type of sorting         
+      likedOnly: false,
+      minRating: 9.0,
+      minPrice: 200,
+      maxPrice: 201,
+      showSale: false,//znygki skilki vdtsotkiv off
+      paymentType: "",
+      meals: {
+         isBreakfastIncluded: false,
+         isDinnerIncluded: false,
+         isLunchIncluded: false,
+      },
+      amenities: {
+         isPoolIncluded: false,
+         isParkingIncluded: false,
+         isWIFIIncluded: false,
+      },
+      hotelStars: [1,2,3],
    },
    reducers: {
       increment: state => {

@@ -104,21 +104,57 @@
       .sidebar__filter {
          .sidebar__headline {
             font-weight: normal;
+            margin-bottom: 4px;
          }
 
          .sidebar__box {
-            .sidebar__item {
+            padding: 6px 0 0 0 ;
+         }
+         .sidebar__price{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            gap: 6px;
+            .sidebar__range{
+               flex: 1;
+               padding: 3px 6px 3px 8px;
+               background-color: white;
+               border-radius: 10px;
+               overflow: hidden;
+               border: 1px solid gray;
+               cursor: text;
+               h4{
+                  font-size: 13px;
+               }
+               input{
+                  font-size: 15px;
+                  width: 100%;
+                  border: none;
+                  &:focus{
+                     outline: none;
+                  }
+                  &::placeholder{
+                     color: rgb(89, 88, 88);
+                  }
+               }
+            }
+         }
+         .sidebar__radio-box{
+            .sidebar__radio{
+               
+               display: flex;
+               align-items: center;
+               &:hover #good{
+                  border: 3px solid red;
+               }
+               &:hover label{
+                  background-color: red;
+               }
             }
          }
       }
    }
 }
-
-
-
-
-
-
 
 
 
@@ -135,7 +171,7 @@
    align-items: center;
    position: relative;
    padding-left: 35px;
-   margin-bottom: 12px;
+   margin-bottom: 6px;
    cursor: pointer;
    font-size: 16px;
    -webkit-user-select: none;

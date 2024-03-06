@@ -5,8 +5,9 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaCalendarDay } from "react-icons/fa";
 import { IoMdPerson, IoMdSearch } from "react-icons/io";
 
-const Search = () => {
 
+
+const Search = () => {
 
    const checkFilters = (event) => {
       event.preventDefault()

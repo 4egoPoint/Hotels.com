@@ -4,13 +4,17 @@ import React from 'react'
 import { IoMdSearch } from "react-icons/io";
 
 
-const Search = () => {
+const Search = (id) => {
+   const focusOnInput = () => {
+      document.getElementById("input1").focus(); 
+      return false;
+   }
    return (
       <div className="sidebar__search-block">
          <div className="sidebar__title">Search by name</div>
-         <div className="sidebar__searchbar">
+         <div className="sidebar__searchbar"  onClick={()=>focusOnInput()}>
             <IoMdSearch />
-            <input placeholder="e.g. Hotel" />
+            <input id="input1" placeholder="e.g. Hotel" />
          </div>
       </div>
    )
