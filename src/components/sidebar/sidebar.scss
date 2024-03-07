@@ -105,17 +105,20 @@
          .sidebar__headline {
             font-weight: normal;
             margin-bottom: 4px;
+            cursor: default;
          }
 
          .sidebar__box {
-            padding: 6px 0 0 0 ;
+            padding: 6px 0 0 0;
          }
-         .sidebar__price{
+
+         .sidebar__price {
             width: 100%;
             display: flex;
             justify-content: space-around;
             gap: 6px;
-            .sidebar__range{
+
+            .sidebar__range {
                flex: 1;
                padding: 3px 6px 3px 8px;
                background-color: white;
@@ -123,33 +126,76 @@
                overflow: hidden;
                border: 1px solid gray;
                cursor: text;
-               h4{
+
+               h4 {
                   font-size: 13px;
                }
-               input{
+
+               input {
                   font-size: 15px;
                   width: 100%;
                   border: none;
-                  &:focus{
+
+                  &:focus {
                      outline: none;
                   }
-                  &::placeholder{
+
+                  &::placeholder {
                      color: rgb(89, 88, 88);
                   }
                }
             }
          }
-         .sidebar__radio-box{
-            .sidebar__radio{
-               
+
+         .sidebar__radio-box {
+            padding: 6px 0 0 6px;
+
+            .sidebar__radio {
+               margin-bottom: 6px;
+               cursor: pointer;
+               display: grid;
+               grid-template-columns: 1em auto;
+               gap: 0.5em;
+               line-height: 1.1;
+
+               input[type="radio"] {
+                  appearance: none;
+                  background-color: #fff;
+                  font: inherit;
+                  color: currentColor;
+                  width: 1.15em;
+                  height: 1.15em;
+                  border: 2px solid gray;
+                  border-radius: 50%;
+                  transform: translateY(-0.075em);
+               }
+            }
+         }
+         .sidebar__starrating{
+            width: 100%;
+            gap: 4px;
+            display: flex;
+            flex-wrap: wrap;
+            .sidebar__starrating-item{
                display: flex;
-               align-items: center;
-               &:hover #good{
-                  border: 3px solid red;
+               border-radius: 6px;
+               background-color: white;
+               border: 1px solid gray;
+               padding: 7px 10px;
+               font-size: 20px;
+               cursor: pointer;
+               &:hover {
+                  background-color: aliceblue;
                }
-               &:hover label{
-                  background-color: red;
+               span{
+                  font-size: 15px;
+                  line-height: 1.2;
+                  padding-right: 4px;
                }
+            }
+            .sidebar__starrating-item--active{
+               border: 2px solid black;
+               background-color: aliceblue   ;
             }
          }
       }
@@ -173,7 +219,7 @@
    padding-left: 35px;
    margin-bottom: 6px;
    cursor: pointer;
-   font-size: 16px;
+   font-size: 15px;
    -webkit-user-select: none;
    -moz-user-select: none;
    -ms-user-select: none;

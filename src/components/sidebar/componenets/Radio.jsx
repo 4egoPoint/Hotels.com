@@ -8,20 +8,20 @@ const Radio = () => {
          <div className="sidebar__headline">Guest rating</div>
          <div className="sidebar__radio-box">
             <div className="sidebar__radio">
-               <input type="radio" id="any" />
-               <label for="any">Any</label>
+               <input type="radio" id="any" name="readio-menu"/>
+               Any
             </div>
             <div className="sidebar__radio">
-               <input type="radio" id="wonderful" />
-               <label for="wonderful">Wonderful 9+</label>
+               <input type="radio" id="wonderful" name="readio-menu"/>
+               Wonderful 9+
             </div>
             <div className="sidebar__radio">
-               <input type="radio" id="verygood" />
-               <label for="verygood">Very good 8+</label>
+               <input type="radio" id="verygood" name="readio-menu"/>
+               Very good 8+
             </div>
             <div className="sidebar__radio">
-               <input type="radio" id="good" />
-               <label for="good">Good 7+</label>
+               <input type="radio" id="good" name="readio-menu"/>
+               Good 7+
             </div>
          </div>
       </div>
