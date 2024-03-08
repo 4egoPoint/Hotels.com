@@ -171,12 +171,14 @@
                }
             }
          }
-         .sidebar__starrating{
+
+         .sidebar__starrating {
             width: 100%;
             gap: 4px;
             display: flex;
             flex-wrap: wrap;
-            .sidebar__starrating-item{
+
+            .sidebar__starrating-item {
                display: flex;
                border-radius: 6px;
                background-color: white;
@@ -184,18 +186,29 @@
                padding: 7px 10px;
                font-size: 20px;
                cursor: pointer;
+
                &:hover {
                   background-color: aliceblue;
                }
-               span{
+
+               span {
+                  font-size: 15px;
+                  line-height: 1.2;
+                  padding-right: 4px;
+               }
+
+               div {
+                  min-width: 25px;
+                  text-align: center;
                   font-size: 15px;
                   line-height: 1.2;
                   padding-right: 4px;
                }
             }
-            .sidebar__starrating-item--active{
+
+            .sidebar__starrating-item--active {
                border: 2px solid black;
-               background-color: aliceblue   ;
+               background-color: aliceblue;
             }
          }
       }

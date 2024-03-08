@@ -1,14 +1,15 @@
 
 
 import React from 'react'
+import Checkoption from "./Checkoption";
 
-const Filtergrup = () => {
+const Filtergrup = ({headline, arr}) => {
    return (
       <div className="sidebar__filter">
-         <div className="sidebar__headline">Popular filters</div>
+         <div className="sidebar__headline">{headline}</div>
          <div className="sidebar__box">
             {
-               paymentFilters.map((item) => <Checkoption key={item.id} name={item.name} func={item.func} />)
+               arr.map((item) => <Checkoption key={item.id} name={item.name} func={item.func} />)
             }
          </div>
       </div>
