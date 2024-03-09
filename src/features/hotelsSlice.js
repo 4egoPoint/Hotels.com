@@ -38,8 +38,8 @@ const initialState = [
    },
 ]
 
-export const roomsSlice = createSlice({
-   name: 'roomsList',
+export const hotelsSlice = createSlice({
+   name: 'hotelsSlice',
    initialState,
    reducers: {
       changeLikedValue: (state, action) => {
@@ -50,6 +50,6 @@ export const roomsSlice = createSlice({
 })
 
 
-export const { changeLikedValue } = roomsSlice.actions
+export const { changeLikedValue } = hotelsSlice.actions
 
-export default roomsSlice.reducer
+export default hotelsSlice.reducer

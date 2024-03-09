@@ -49,8 +49,8 @@ const Header = () => {
                <button onClick={() => setIsDropdownOpen(!isDropdownOpen)} className="header__dropdown">Shop travel {isDropdownOpen ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}</button>
                {
                   isDropdownOpen ? <ul className="header__droped-menu">
-                     <li>Groups & meetings</li>
-                     <li>Hotels.com Rewards</li>
+                     <li onClick={()=>setIsDropdownOpen(false)}>Groups & meetings</li>
+                     <li onClick={()=>setIsDropdownOpen(false)}>Hotels.com Rewards</li>
                   </ul> : null
                }
             </div>

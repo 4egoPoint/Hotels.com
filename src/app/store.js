@@ -1,12 +1,12 @@
 
 import { configureStore } from '@reduxjs/toolkit'
-import roomsSlice from "../features/roomsSlice"
+import hotelsSlice from "../features/hotelsSlice"
 import filterSlice from "../features/filtersSlice"
 import compareSlice from '../features/compareSlice'
 
 export default configureStore({
    reducer: {
-      roomsList: roomsSlice,
+      hotelsList: hotelsSlice,
       filters: filterSlice,
       compare: compareSlice,
    }
