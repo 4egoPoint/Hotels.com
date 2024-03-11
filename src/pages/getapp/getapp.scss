@@ -1,0 +1,93 @@
+.getapp{
+   .getapp__wrapper{
+      width: 1220px;
+      margin: auto;
+      .getapp__text{
+         padding: 60px 0;
+         text-align: center;
+         h2{
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: rgb(95, 93, 93);
+         }
+         p{
+            width: 700px;
+            margin: auto;
+         }
+      }
+      .getapp__QR-box{
+         border-radius: 20px;
+         border: 1px solid rgb(204, 204, 204);
+         display: flex;
+         background-color: white;
+         display: flex;
+         align-items: center;
+         padding: 20px;
+         height: 240px;
+         .getapp__QR-text-side{
+            flex: 1;
+            h3{
+               font-size: 30px;
+               margin-bottom: 20px;
+            }
+            h4{}
+            p{
+               width: 80%;
+            }
+         }
+         .getapp__QR-code-side{
+            display: flex;
+            flex-direction: column;
+            img{
+               height: 150px;
+               margin-bottom: 10px;
+               // padding: 10px;
+            }
+            span{
+               display: block;
+               text-align: center;
+            }
+         }
+      }
+      .getapp__platforms{
+         width: fit-content;
+         margin: 20px auto;
+         h3{
+            text-align: center;
+            margin-bottom: 20px;
+         }
+         img{
+            width: 360px;
+         }
+      }
+      .getapp__reasons{
+         margin: 30px 0;
+         h2{
+            color: rgb(95, 93, 93);
+            margin-bottom: 16px;
+            text-align: center;
+         }
+         .getapp__reasons-row{
+            display: flex;
+            justify-content: space-between;
+            .getapp__reason{
+               width: 23%;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               color: rgb(95, 93, 93);
+               font-size: 60px;
+               h4{
+                  font-size: 20px;
+                  color: black;
+               }
+               p{
+                  text-align: center;
+                  font-size: 16px;
+                  color: rgb(106, 105, 105);
+               }
+            }
+         }
+      }
+   }
+}

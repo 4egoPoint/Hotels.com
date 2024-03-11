@@ -56,7 +56,7 @@ const Header = () => {
             </div>
             {isDropdownOpen ? <button onClick={() => setIsDropdownOpen(!isDropdownOpen)} className="katalizator"></button> : null}
             <div className="header__row">
-               <button className="header__get-app"><IoMdDownload  /><span>Get the app</span></button>
+               <Link to="/getapp" className="header__get-app"><IoMdDownload  /><span>Get the app</span></Link>
                <nav className="header__nav">
                   {
                      routesArr.map((item)=> <Nav key={item.id} 
