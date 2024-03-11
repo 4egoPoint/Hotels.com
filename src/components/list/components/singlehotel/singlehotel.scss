@@ -1,0 +1,224 @@
+.singlehotel {
+   border-radius: 20px;
+   height: 260px;
+   width: 100%;
+   display: flex;
+   text-decoration: none;
+   overflow: hidden;
+   color: black;
+   background-color: aliceblue;
+
+   .singlehotel__img-side {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+
+      img {
+         height: 100%;
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+      }
+
+      .singlehotel__img-holder {
+         width: 100%;
+         height: 100%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 40px;
+         border: 1px solid black;
+         border-top-left-radius: 20px;
+         border-bottom-left-radius: 20px;
+      }
+
+      .singlehotel__heart-btn {
+         z-index: 10;
+         cursor: pointer;
+         position: absolute;
+         right: 10px;
+         top: 10px;
+         border: none;
+         color: red;
+         padding: 5px;
+         font-size: 18px;
+         border-radius: 200px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         background-color: whitesmoke;
+      }
+
+      .singlehotel__slider-bar {
+         position: absolute;
+         display: flex;
+         width: 100%;
+         justify-content: space-between;
+         top: 120px;
+         padding: 0 10px;
+         background-color: transparent;
+
+         button {
+            cursor: pointer;
+            border-radius: 200px;
+            z-index: 14;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 28px;
+            width: 28px;
+            font-size: 24px;
+            border: none;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+
+            &:hover {
+               background-color: rgba(0, 0, 0, 0.6);
+            }
+         }
+      }
+   }
+
+   .info-side {
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      padding: 8px;
+      border: 1px solid rgb(187, 186, 186);
+      border-left: none;
+      flex: 2;
+      background-color: white;
+
+      .info-side__top {
+         height: 50%;
+         display: flex;
+         flex-direction: column;
+
+         .info-side__main-info {
+            flex: 1;
+
+            .info-side__hotel-name {
+               color: rgb(41, 41, 41);
+               font-size: 20px;
+               font-weight: 500;
+            }
+
+            .info-side__location {
+               color: rgb(109, 109, 109);
+            }
+         }
+
+         .info-side__description-box {
+            .info-side__text {
+               width: 70%;
+               font-size: 12px;
+            }
+         }
+      }
+
+      .info-side__bottom {
+         height: 50%;
+         display: flex;
+         justify-content: space-between;
+
+         .bottom__left {
+            height: 100%;
+            justify-content: flex-end;
+            display: flex;
+            flex-direction: column;
+
+            .bottom__payment-type {
+               color: rgb(31, 153, 31);
+               font-size: 15px;
+            }
+
+            .bottom__idk {
+               margin: 5px 0 8px;
+               display: flex;
+               align-items: center;
+               gap: 5px;
+               font-size: 13px;
+
+               img {
+                  height: 18px;
+               }
+            }
+
+            .bottom__raitng {
+               display: flex;
+               gap: 5px;
+               align-items: center;
+
+               .bottom__rating-num {
+                  padding: 2px 6px 3px;
+                  background-color: rgb(15, 107, 3);
+                  color: white;
+                  font-size: 14px;
+                  border-radius: 4px;
+               }
+
+               .bottom__inf {
+                  .bottom__rating-word {
+                     font-size: 13px;
+                     font-weight: 500;
+                  }
+
+                  .bottom__reviews {
+                     font-size: 12px;
+                  }
+               }
+            }
+         }
+
+         .bottom__right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-end;
+
+            .bottom__sale {
+               padding: 2px 5px 3px;
+               border-radius: 5px;
+               background-color: rgb(214, 13, 13);
+               color: white;
+               width: fit-content;
+               font-size: 13px;
+               font-weight: 500;
+            }
+
+            .bottom__prices {
+               display: flex;
+               padding: 2px;
+               gap: 8px;
+               align-items: center;
+
+               .bottom__normal-price {
+                  font-size: 13px;
+                  text-decoration: line-through;
+
+                  span {
+                     text-decoration: underline;
+                  }
+               }
+
+               .bottom__final-price {
+                  font-size: 19px;
+                  font-weight: 500;
+               }
+            }
+
+            .bottom__time-period {
+               font-size: 11px;
+            }
+
+            .bottom__price-per-night {
+               font-weight: 500;
+               font-size: 14px;
+            }
+
+            .bottom__policy {
+               font-size: 11px;
+            }
+         }
+      }
+   }
+}

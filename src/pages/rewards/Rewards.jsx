@@ -17,3 +17,5 @@ const Rewards = () => {
 }
 
 export default Rewards
+
+// rewards from header menu "shop travel"

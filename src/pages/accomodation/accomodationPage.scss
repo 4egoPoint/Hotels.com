@@ -1,0 +1,21 @@
+.accomodation{
+   &__wrapper{
+      width: 1220px;
+      margin: auto;
+      font-size: 14px;
+      h3{
+         margin: 12px 0;
+      }
+      p{
+         margin: 12px 0;
+      }
+      ul{
+         margin: 12px 0;
+         padding: 0 0 0 16px;
+         li{
+            padding: 0 0 0 5px;
+            margin: 4px 0;
+         }
+      }
+   }
+}

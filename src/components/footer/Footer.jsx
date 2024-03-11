@@ -1,5 +1,5 @@
 
-
+import { nanoid } from '@reduxjs/toolkit'
 import "./footer.scss"
 const destinationsArr = [
    "Hotels in Dublin",  "Hotels in Galway",  "Hotels in Killarney",
@@ -41,37 +41,37 @@ const Footer = () => {
                <div className="footer__column">
                   <div className="footer__subtitle">Top destinations</div>
                   {
-                     destinationsArr.map(i=><div className="footer__item">{i}</div>)
+                     destinationsArr.map(i=><div key={nanoid()} className="footer__item">{i}</div>)
                   }
                </div>
                <div className="footer__column">
                   <div className="footer__subtitle">Top countries & regions</div>
                   {
-                     countriesArr.map(i=><div className="footer__item">{i}</div>)
+                     countriesArr.map(i=><div key={nanoid()} className="footer__item">{i}</div>)
                   }
                </div>
                <div className="footer__column">
                   <div className="footer__subtitle">Support & FAQs</div>
                   {
-                     supportArr.map(i=><div className="footer__item">{i}</div>)
+                     supportArr.map(i=><div key={nanoid()} className="footer__item">{i}</div>)
                   }
                </div>
                <div className="footer__column">
                   <div className="footer__subtitle">For suppliers, affiliates and the media</div>
                   {
-                     suppliersArr.map(i=><div className="footer__item">{i}</div>)
+                     suppliersArr.map(i=><div key={nanoid()} className="footer__item">{i}</div>)
                   }
                </div>
                <div className="footer__column">
                   <div className="footer__subtitle">Polocies</div>
                   {
-                     policiesArr.map(i=><div className="footer__item">{i}</div>)
+                     policiesArr.map(i=><div key={nanoid()} className="footer__item">{i}</div>)
                   }
                </div>
                <div className="footer__column">
                   <div className="footer__subtitle">Other information</div>
                   {
-                     otherArr.map(i=><div className="footer__item">{i}</div>)
+                     otherArr.map(i=><div key={nanoid()} className="footer__item">{i}</div>)
                   }
                </div>
             </div>

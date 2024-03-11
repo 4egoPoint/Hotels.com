@@ -22,6 +22,11 @@
                justify-content: space-between;
                align-items: center;
             }
+            .list__list{
+               display: flex;
+               flex-direction: column;
+               gap: 14px;
+            }
          }
       }
       .list__holder{flex: 1;}

@@ -7,6 +7,7 @@ import Home from './pages/home/Home';
 import store from "./app/store"
 import { Provider } from "react-redux"
 import Rewards from './pages/rewards/Rewards';
+import Accomodation from './pages/accomodation/AccomodationPage';
 
 const router = createBrowserRouter([
   {
@@ -17,12 +18,17 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />
       },
+      {
+        path: "/accomodation",
+        element: <Accomodation />
+      },
     ]
   },
   {
     path: "/rewards",
     element: <Rewards />
-  }
+  },
+  
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
