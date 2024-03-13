@@ -12,7 +12,7 @@ const routesArr = [
       id: 1,
       navType: "link",
       name: "List your property",
-      link: "",
+      link: "/property",
       route: "",
    },
    {
@@ -24,9 +24,9 @@ const routesArr = [
    },
    {
       id: 3,
-      navType: "route",
-      name: "Tips",
-      link: "",
+      navType: "link",
+      name: "Trips",
+      link: "/trips",
       route: "",
    },
    {

@@ -1,723 +1,1175 @@
 
-
+import { nanoid } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = [
    {
-      id: 1,
+      id: nanoid(),
       isLiked: false,
-      hotelName: "Test hotel name",
-      hotelImages: ["https://images.trvl-media.com/lodging/93000000/92980000/92975800/92975781/58564fda.jpg?impolicy=resizecrop&rw=1200&ra=fit","https://images.trvl-media.com/lodging/93000000/92980000/92975800/92975781/c0a56c72.jpg?impolicy=resizecrop&rw=1200&ra=fit"],
-      hotelRating: 9.2,//rating from 1 to 10
-      minCostPerNight: 200,
-      priceOff: 20,
+      hotelName: "Regent Warsaw Hotel",
+      hotelPreDescription: "Luxury hotel in Srodmiescie with spa and indoor pool",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/f4812410.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/34b6a791.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/7a46f1a8.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/acdd4f46.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/c72a5ff0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 9.0,//rating from 1 to 10
+      minCostPerNight: 136,
+      priceOff: 0,
       paymentType: "Reserve now, pay later",
-      hotelDescription: "Located in the entertainment district, Barceló Warsaw Powiśle is a great choice for a stay in Warsaw. You can grab a bite to eat at the restaurant or wind down at the end of the day with a drink from the bar/lounge. Fellow travellers say good things about the location. The property is only a short walk to public transportation: Centrum Nauki Kopernik Station is 3 minutes and Most Poniatowskiego 04 Tram Stop is 9 minutes.",
-      hotelStarsCounter: 4,
+      hotelDescription: "Take in the views from the rooftop terrace when you stay at Regent Warsaw Hotel. Guests can grab a bite to eat at the coffee shop/cafe and visit the spa to be pampered with hot stone massages, facials or body scrubs. Other features of this luxurious hotel include an indoor pool, a bar/lounge and a fitness centre. Fellow travellers say good things about the helpful staff and breakfast. Public transportation is only a short walk: Dworkowa 06 Tram Stop is 9 minutes and Dworkowa 05 Tram Stop is 9 minutes.",
+      hotelStarsCounter: 5,
+      hotelReviews: 638,
       hotelRoomsArr: [
          {
-            id:1,
-            name:"",
-            price:100,
-            typeOfBed:"King bad",
-            areaSize: 13,// how many sq m
-            howManyLeft: 3,
-         }
+            id: nanoid(),
+            name: "Deluxe Twin Room",
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            price: 136,
+            typeOfBed: "Twin beds",
+            areaSize: 38,// how many sq m
+         },
+         {
+            id: nanoid(),
+            name: "Superior Double Room",
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            price: 173,
+            typeOfBed: "King bed",
+            areaSize: 46,
+         },
+         {
+            id: nanoid(),
+            name: "Club Twin",
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            price: 181,
+            typeOfBed: "Twin beds",
+            areaSize: 38,
+         },
       ],
-      hotelReviews: 10,
       meals: {
-         isBreakfastIncluded: false,
+         isBreakfastIncluded: true,
          isDinnerIncluded: false,
-         isLunchIncluded:false,
+         isLunchIncluded: false,
       },
       amenities: {
          isPoolIncluded: false,
+         isParkingIncluded: true,
+         isWIFIIncluded: false,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "InterContinental Warsaw, an IHG Hotel",
+      hotelPreDescription: "Luxury Warsaw hotel with full-service spa, connected to the convention centre",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/ec2c7904.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/76b0bbda.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/021b2b7a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/239c1cd2.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/98751571.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 9.2,//rating from 1 to 10
+      minCostPerNight: 205,
+      priceOff: 0,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Located near a train station, InterContinental Warsaw, an IHG Hotel is a great choice for a stay in Warsaw. You can visit the spa to be pampered with body wraps or aromatherapy, and Downtown, one of 2 restaurants, serves international cuisine and is open for breakfast, lunch and dinner. Other features of this luxurious hotel include an indoor pool, a bar/lounge and a 24-hour fitness centre. The helpful staff and breakfast get great marks from fellow travellers. The property is only a short walk to public transportation: Rondo ONZ 03 Tram Stop is 5 minutes and Rondo ONZ Station is 6 minutes.",
+      hotelStarsCounter: 5,
+      hotelReviews: 1000,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            name: "Premium Room",
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            price: 205,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            name: "Classic Room",
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            price: 196,
+            typeOfBed: "Twin bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            name: "Suite, 1 Bedroom",
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            price: 319,
+            typeOfBed: "Twin bed",
+            areaSize: 58,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: false,
+         isDinnerIncluded: true,
+         isLunchIncluded: false,
+      },
+      amenities: {
+         isPoolIncluded: true,
          isParkingIncluded: false,
          isWIFIIncluded: false,
       }
    },
    {
-      id: 2,
+      id: nanoid(),
       isLiked: false,
-      hotelName: "",
-      hotelImages: [],
-      hotelRating: 9.2,//rating from 1 to 10
-      minCostPerNight: 200,
+      hotelName: "Holiday Inn Warsaw City Centre, an IHG Hotel",
+      hotelPreDescription: "Hotel with restaurant, near Palace of Culture and Science",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/20000000/19690000/19681300/19681261/88d6df93.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/20000000/19690000/19681300/19681261/0b9ec466.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/20000000/19690000/19681300/19681261/6f877e07.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/20000000/19690000/19681300/19681261/6f877e07.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/20000000/19690000/19681300/19681261/8c2530ca.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 9.4,//rating from 1 to 10
+      minCostPerNight: 122,
       priceOff: 0,
-      paymentType: "",
-      hotelDescription: "",
-      hotelStarsCounter: 4,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Enjoy your visit to Warsaw with a stay at Holiday Inn Warsaw City Centre, an IHG Hotel. Guests can visit the 24-hour fitness centre for a workout or grab a bite to eat at Open Lobby, which serves breakfast, lunch and dinner. Fellow travellers say great things about the breakfast and location. Public transportation is only a short walk: Norblin 03 Tram Stop is 4 minutes and Norblin 04 Tram Stop is 4 minutes.",
+      hotelStarsCounter: 3,
+      hotelReviews: 690,
       hotelRoomsArr: [
          {
-            id:1,
-            name:"",
-            price:100,
-            typeOfBed:"King bad",
-            areaSize: 13,// how many sq m
-            howManyLeft: 3,
-         }
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
       ],
-      hotelReviews: 10,
       meals: {
          isBreakfastIncluded: false,
-         isDinnerIncluded: false,
+         isDinnerIncluded: true,
          isLunchIncluded:false,
       },
       amenities: {
          isPoolIncluded: false,
          isParkingIncluded: false,
+         isWIFIIncluded: true,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "Apartamenty Złota by Sun & Snow",
+      hotelPreDescription: "Upmarket Centrum apartment with kitchenette",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/102000000/101960000/101954700/101954665/8d18ff77.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/102000000/101960000/101954700/101954665/8d18ff77.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/102000000/101960000/101954700/101954665/44745ae3.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/102000000/101960000/101954700/101954665/4e45dcd8.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/102000000/101960000/101954700/101954665/e8d62130.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 8.7 ,//rating from 7 to 10
+      minCostPerNight: 165,
+      priceOff: 0,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Enjoy your visit to Warsaw with a stay at this apartment. Apartments feature conveniences such as kitchenettes, along with flat-screen TVs and free WiFi. Public transportation is only a short walk: Dworzec Centralny 09 Tram Stop is 4 minutes and Rondo ONZ 03 Tram Stop is 5 minutes.",
+      hotelStarsCounter: 4,
+      hotelReviews: 231,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: true,
+         isDinnerIncluded: false,
+         isLunchIncluded:false,
+      },
+      amenities: {
+         isPoolIncluded: true,
+         isParkingIncluded: false,
          isWIFIIncluded: false,
       }
    },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "Hit Hotel",
+      hotelPreDescription: "Praga Polnoc hotel with restaurant and bar/lounge",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/7000000/6040000/6037300/6037245/3e87b6a1.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/7000000/6040000/6037300/6037245/1411cc97.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/7000000/6040000/6037300/6037245/506a52c3.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/7000000/6040000/6037300/6037245/003e648b.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/7000000/6040000/6037300/6037245/5f4bc2dc.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 7.5,//rating from 1 to 10
+      minCostPerNight: 120,
+      priceOff: 10,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Located near a train station, Hit Hotel is a great choice for a stay in Warsaw. You can grab a bite to eat at the restaurant or wind down at the end of the day with a drink from the bar/lounge. Public transportation is only a short walk: Ząbkowska 04 Tram Stop is 2 minutes and Dworzec Wileński Station is 4 minutes.",
+      hotelStarsCounter: 3,
+      hotelReviews: 270,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: false,
+         isDinnerIncluded: true,
+         isLunchIncluded:false,
+      },
+      amenities: {
+         isPoolIncluded: false,
+         isParkingIncluded: true,
+         isWIFIIncluded: false,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "Media Park",
+      hotelPreDescription: "Comfortable Warsaw apartments with kitchens",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/17000000/16310000/16306500/16306473/0a10fec2.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/17000000/16310000/16306500/16306473/766fa680.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/17000000/16310000/16306500/16306473/dab16b00.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/17000000/16310000/16306500/16306473/dab16b00.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/17000000/16310000/16306500/16306473/dab16b00.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 8.6,//rating from 1 to 10
+      minCostPerNight: 65,
+      priceOff: 0,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "When visiting Warsaw, Media Park is a great choice to consider. You'll have free perks such as WiFi and wired Internet. Apartments feature bonuses such as sofa beds, fridges and microwaves. The property is only a short walk to public transportation: Kwatery Głównej 04 Tram Stop is 4 minutes and Kwatery Głównej 03 Tram Stop is 5 minutes.",
+      hotelStarsCounter: 4,
+      hotelReviews: 59,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: false,
+         isDinnerIncluded: false,
+         isLunchIncluded:true,
+      },
+      amenities: {
+         isPoolIncluded: false,
+         isParkingIncluded: false,
+         isWIFIIncluded: true,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "Logos",
+      hotelPreDescription: "Riverfront hotel in Centrum with 2 restaurants and bar/lounge",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/9000000/8060000/8054300/8054239/58c67fc5.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/9000000/8060000/8054300/8054239/c1f67ce4.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/9000000/8060000/8054300/8054239/a5ed30b5.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/9000000/8060000/8054300/8054239/02393828.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/9000000/8060000/8054300/8054239/113d89e6.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 8.0,//rating from 1 to 10
+      minCostPerNight: 60,
+      priceOff: 25,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Logos is a great choice for a stay in Warsaw. Guests looking for a bite to eat can visit the 2 restaurants, and the bar/lounge is the perfect spot to grab a drink at the end of the day. The property is only a short walk to public transportation: Centrum Nauki Kopernik Station is 4 minutes and Most Poniatowskiego 04 Tram Stop is 5 minutes.",
+      hotelStarsCounter: 1,
+      hotelReviews: 130,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: true,
+         isDinnerIncluded: false,
+         isLunchIncluded:false,
+      },
+      amenities: {
+         isPoolIncluded: true,
+         isParkingIncluded: false,
+         isWIFIIncluded: false,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "UNIT Warszawa Centrum Room by Metro Rondo ONZ",
+      hotelPreDescription: "Adults-only apartment in Centrum with restaurant",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/26000000/25110000/25105500/25105430/fd2b6028.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/26000000/25110000/25105500/25105430/6d3a4162.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/26000000/25110000/25105500/25105430/95a3f5cd.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/26000000/25110000/25105500/25105430/07d44ded.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/26000000/25110000/25105500/25105430/76d79f2c.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 6.4,//rating from 1 to 10
+      minCostPerNight: 45,
+      priceOff: 20,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Enjoy your visit to Warsaw with a stay at UNIT Warszawa Centrum Room by Metro Rondo ONZ. Apartments feature conveniences such as fridges and microwaves. Public transportation is only a short walk: Norblin 04 Tram Stop is 6 minutes and Norblin 03 Tram Stop is 6 minutes.",
+      hotelStarsCounter: 2,
+      hotelReviews: 27,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: false,
+         isDinnerIncluded: false,
+         isLunchIncluded:true,
+      },
+      amenities: {
+         isPoolIncluded: false,
+         isParkingIncluded: false,
+         isWIFIIncluded: true,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "Barceló Warsaw Powiśle",
+      hotelPreDescription: "Hotel with restaurant, near Copernicus Science Centre",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/93000000/92980000/92975800/92975781/58564fda.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/93000000/92980000/92975800/92975781/322f6eac.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/93000000/92980000/92975800/92975781/c0a56c72.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/93000000/92980000/92975800/92975781/1f9649d9.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/93000000/92980000/92975800/92975781/562494dd.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 9.0,//rating from 1 to 10
+      minCostPerNight: 200,
+      priceOff: 5,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Located in the entertainment district, Barceló Warsaw Powiśle is a great choice for a stay in Warsaw. You can grab a bite to eat at the restaurant or wind down at the end of the day with a drink from the bar/lounge. Fellow travellers say good things about the location. The property is only a short walk to public transportation: Centrum Nauki Kopernik Station is 3 minutes and Most Poniatowskiego 04 Tram Stop is 9 minutes.",
+      hotelStarsCounter: 4,
+      hotelReviews: 86,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: false,
+         isDinnerIncluded: false,
+         isLunchIncluded:true,
+      },
+      amenities: {
+         isPoolIncluded: false,
+         isParkingIncluded: false,
+         isWIFIIncluded: true,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "RentPlanet - Apartamenty Wolska",
+      hotelPreDescription: "Guesthouse in Wola",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/54000000/53870000/53868900/53868824/ee5b23ad.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/54000000/53870000/53868900/53868824/59711bfe.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/54000000/53870000/53868900/53868824/59711bfe.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/54000000/53870000/53868900/53868824/049ecac8.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/54000000/53870000/53868900/53868824/38205b12.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 8.8,//rating from 1 to 10
+      minCostPerNight: 200,
+      priceOff: 0,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Enjoy your visit to Warsaw with a stay at RentPlanet - Apartamenty Wolska.",
+      hotelStarsCounter: 3,
+      hotelReviews: 17,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: false,
+         isDinnerIncluded: true,
+         isLunchIncluded:false,
+      },
+      amenities: {
+         isPoolIncluded: false,
+         isParkingIncluded: true,
+         isWIFIIncluded: false,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "Mamaison Le Regina Boutique Hotel",
+      hotelPreDescription: "Luxury hotel in Srodmiescie with spa and indoor pool",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/2000000/1070000/1061200/1061141/09bdb89d.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1070000/1061200/1061141/75524904.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1070000/1061200/1061141/c9c1efb7.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1070000/1061200/1061141/5bcc4576.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1070000/1061200/1061141/7630c4e4.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 9.6,//rating from 1 to 10
+      minCostPerNight: 200,
+      priceOff: 23,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Located near a train station, Mamaison Le Regina Boutique Hotel is a great choice for a stay in Warsaw. You can visit the spa to indulge in deep-tissue massages, facials or Ayurvedic treatments, and La Rotisserie serves breakfast, lunch and dinner. Other highlights at this luxurious hotel include an indoor pool, a bar/lounge and a sauna. The pool and helpful staff get great marks from fellow travellers. Public transportation is only a short walk: Muranowska 08 Tram Stop is 10 minutes and Muranowska 07 Tram Stop is 10 minutes.",
+      hotelStarsCounter: 5,
+      hotelReviews: 1,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: false,
+         isDinnerIncluded: false,
+         isLunchIncluded:true,
+      },
+      amenities: {
+         isPoolIncluded: false,
+         isParkingIncluded: false,
+         isWIFIIncluded: true,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "Sofitel Warsaw Victoria",
+      hotelPreDescription: "Luxury hotel in Centrum with spa and indoor pool",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/1000000/10000/3600/3535/28313cd4.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/10000/3600/3535/78b6dd76.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/10000/3600/3535/1caaad61.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/10000/3600/3535/e9979d6d.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/10000/3600/3535/dfc0666e.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 9.4,//rating from 1 to 10
+      minCostPerNight: 200,
+      priceOff: 0,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Located near a train station, Sofitel Warsaw Victoria is a great choice for a stay in Warsaw. The indoor pool is a great spot to take a dip, and guests can grab a bite to eat at La Brasserie Moderne, which serves international cuisine and is open for lunch and dinner. A bar/lounge, a fitness centre and a snack bar/deli are other highlights at this luxurious hotel. Fellow travellers say great things about the comfortable beds and helpful staff. The property is only a short walk to public transportation: Królewska 05 Tram Stop is 6 minutes and Królewska 06 Tram Stop is 7 minutes.",
+      hotelStarsCounter: 5,
+      hotelReviews: 1007,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: true,
+         isDinnerIncluded: false,
+         isLunchIncluded:false,
+      },
+      amenities: {
+         isPoolIncluded: true,
+         isParkingIncluded: false,
+         isWIFIIncluded: false,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "Oki Doki OLD TOWN",
+      hotelPreDescription: "Warsaw hotel with restaurant and bar/lounge",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/20000000/19730000/19721500/19721423/33a12c8a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/20000000/19730000/19721500/19721423/05b8b68b.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/20000000/19730000/19721500/19721423/ff6ddebc.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/20000000/19730000/19721500/19721423/943acda8.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/20000000/19730000/19721500/19721423/612b7a23.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 8.4,//rating from 1 to 10
+      minCostPerNight: 170,
+      priceOff: 15,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Oki Doki OLD TOWN is a great choice for a stay in Warsaw. You can relax with a drink at the bar/lounge, and the coffee shop/cafe is the perfect spot to grab a bite to eat. A terrace and a garden are offered, and in-room conveniences include fridges and microwaves. Fellow travellers like the location. The property is only a short walk to public transportation: Muranów 06 Tram Stop is 10 minutes and Muranów 05 Tram Stop is 10 minutes.",
+      hotelStarsCounter: 2,
+      hotelReviews: 109,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: false,
+         isDinnerIncluded: false,
+         isLunchIncluded:true,
+      },
+      amenities: {
+         isPoolIncluded: true,
+         isParkingIncluded: true,
+         isWIFIIncluded: false,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "Sheraton Grand Warsaw",
+      hotelPreDescription: "Luxury hotel in Centrum with spa and restaurant",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/1000000/50000/46600/46565/dfbca071.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/50000/46600/46565/0f92f361.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/50000/46600/46565/c8caed7a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/50000/46600/46565/52834091.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/50000/46600/46565/3624fcfb.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 9.0,//rating from 1 to 10
+      minCostPerNight: 139,
+      priceOff: 0,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Located in the entertainment district, Sheraton Grand Warsaw is a great choice for a stay in Warsaw. Guests can indulge in massages at the spa, and Mezzano serves breakfast. Other highlights at this luxurious hotel include a bar/lounge, a health club and a fitness centre. The property is only a short walk to public transportation: Muzeum Narodowe 06 Tram Stop is 6 minutes and Krucza 06 Tram Stop is 9 minutes.",
+      hotelStarsCounter: 5,
+      hotelReviews: 1001,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: true,
+         isDinnerIncluded: false,
+         isLunchIncluded:false,
+      },
+      amenities: {
+         isPoolIncluded: true,
+         isParkingIncluded: false,
+         isWIFIIncluded: false,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "Vola Residence",
+      hotelPreDescription: "Aparthotel with restaurant, near Warsaw Uprising Museum",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/28000000/27090000/27087500/27087430/9817bfdb.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/28000000/27090000/27087500/27087430/b4653e4b.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/28000000/27090000/27087500/27087430/b940ece5.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/28000000/27090000/27087500/27087430/6de03c70.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/28000000/27090000/27087500/27087430/2163c929.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 9.2,//rating from 1 to 10
+      minCostPerNight: 109,
+      priceOff: 0,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Enjoy your visit to Warsaw with a stay at Vola Residence. Guests looking for a bite to eat can visit the restaurant, and the bar/lounge is the perfect spot to grab a drink at the end of the day. Apartments feature kitchenettes, flat-screen TVs and premium bedding. Fellow travellers like the overall property condition. Public transportation is only a short walk: Szpital Wolski 06 Tram Stop is 13 minutes and Szpital Wolski 05 Tram Stop is 13 minutes.",
+      hotelStarsCounter: 4,
+      hotelReviews: 154,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: false,
+         isDinnerIncluded: true,
+         isLunchIncluded:false,
+      },
+      amenities: {
+         isPoolIncluded: false,
+         isParkingIncluded: true,
+         isWIFIIncluded: false,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "Mamaison Le Regina Boutique Hotel",
+      hotelPreDescription: "Luxury hotel in Srodmiescie with spa and indoor pool",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/2000000/1070000/1061200/1061141/09bdb89d.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1070000/1061200/1061141/75524904.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1070000/1061200/1061141/c9c1efb7.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1070000/1061200/1061141/5bcc4576.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1070000/1061200/1061141/95091745.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 9.6,//rating from 1 to 10
+      minCostPerNight: 135,
+      priceOff: 0,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Located near a train station, Mamaison Le Regina Boutique Hotel is a great choice for a stay in Warsaw. You can visit the spa to indulge in deep-tissue massages, facials or Ayurvedic treatments, and La Rotisserie serves breakfast, lunch and dinner. Other highlights at this luxurious hotel include an indoor pool, a bar/lounge and a sauna. The pool and helpful staff get great marks from fellow travellers. Public transportation is only a short walk: Muranowska 08 Tram Stop is 10 minutes and Muranowska 07 Tram Stop is 10 minutes.",
+      hotelStarsCounter: 5,
+      hotelReviews: 1001,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: false,
+         isDinnerIncluded: false,
+         isLunchIncluded:true,
+      },
+      amenities: {
+         isPoolIncluded: false,
+         isParkingIncluded: false,
+         isWIFIIncluded: true,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "Great City Center Apartment by Renters",
+      hotelPreDescription: "Upmarket Warsaw apartment with kitchen",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/96000000/95100000/95095800/95095750/40eb28f1.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/96000000/95100000/95095800/95095750/c52f672d.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/96000000/95100000/95095800/95095750/714a262b.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/96000000/95100000/95095800/95095750/8a57a9fa.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/96000000/95100000/95095800/95095750/c50e9ee8.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 9.2,//rating from 1 to 10
+      minCostPerNight: 140,
+      priceOff: 0,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "When visiting Warsaw, this apartment is a great choice to consider. Apartments feature kitchens and dining tables. The property is only a short walk to public transportation: Hoża 03 Tram Stop is steps away and Hoża 04 Tram Stop is 3 minutes.",
+      hotelStarsCounter: 4,
+      hotelReviews: 450,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: true,
+         isDinnerIncluded: false,
+         isLunchIncluded:false,
+      },
+      amenities: {
+         isPoolIncluded: false,
+         isParkingIncluded: true,
+         isWIFIIncluded: false,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "Metropol Hotel",
+      hotelPreDescription: "Centrum hotel with restaurant and bar/lounge",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/1000000/800000/794200/794155/eb411493.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/800000/794200/794155/33d0b792.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/800000/794200/794155/c894e452.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/800000/794200/794155/7a0252d1.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/1000000/800000/794200/794155/163ce51c.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 8.8,//rating from 1 to 10
+      minCostPerNight: 114,
+      priceOff: 0,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Located near a train station, Metropol Hotel is a great choice for a stay in Warsaw. For a bite to eat, guests can visit Metro Jazz Bar & Bistro, which serves breakfast, lunch and dinner. Other features include a bar/lounge and a snack bar/deli. Fellow travellers love the helpful staff and overall property condition. Public transportation is only a short walk: Centrum 08 Tram Stop is steps away and Centrum Station is 2 minutes.",
+      hotelStarsCounter: 3,
+      hotelReviews: 940,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: false,
+         isDinnerIncluded: false,
+         isLunchIncluded:true,
+      },
+      amenities: {
+         isPoolIncluded: false,
+         isParkingIncluded: false,
+         isWIFIIncluded: true,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "POLECZKI RESIDENCE APARTMENTS",
+      hotelPreDescription: "Warsaw apartment with restaurant and bar/lounge",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/11000000/10660000/10651900/10651842/003a0088.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/11000000/10660000/10651900/10651842/e126898f.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/11000000/10660000/10651900/10651842/87ca871c.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/11000000/10660000/10651900/10651842/2fa8dbc6.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/11000000/10660000/10651900/10651842/15b94756.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 8.2,//rating from 1 to 10
+      minCostPerNight: 55,
+      priceOff: 0,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "When visiting Warsaw, POLECZKI RESIDENCE APARTMENTS is a great choice to consider. Guests looking for a bite to eat can visit Poleczka, which serves international cuisine. There's a bar/lounge, and apartments offer LCD TVs and room service.",
+      hotelStarsCounter: 5,
+      hotelReviews: 192,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: true,
+         isDinnerIncluded: false,
+         isLunchIncluded:false,
+      },
+      amenities: {
+         isPoolIncluded: true,
+         isParkingIncluded: true,
+         isWIFIIncluded: false,
+      }
+   },
+   {
+      id: nanoid(),
+      isLiked: false,
+      hotelName: "Castle Inn",
+      hotelPreDescription: "City centre Old Town Warsaw hotel with bar/lounge",
+      hotelImages: [
+         "https://images.trvl-media.com/lodging/2000000/1900000/1894900/1894895/c96016e9.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1900000/1894900/1894895/660ab060.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1900000/1894900/1894895/d74580ac.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1900000/1894900/1894895/45e42ef1.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+         "https://images.trvl-media.com/lodging/2000000/1900000/1894900/1894895/4a357356.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+      ],
+      hotelRating: 8.6,//rating from 1 to 10
+      minCostPerNight: 168,
+      priceOff: 10,
+      paymentType: "Reserve now, pay later",
+      hotelDescription: "Located near a train station, Castle Inn is a great choice for a stay in Warsaw. You can unwind with a drink at the bar/lounge, and continental breakfast is available daily. Fellow travellers love the helpful staff and local sightseeing. Public transportation is only a short walk: Plac Bankowy 08 Tram Stop is 13 minutes and Plac Bankowy 07 Tram Stop is 14 minutes.",
+      hotelStarsCounter: 3,
+      hotelReviews: 792,
+      hotelRoomsArr: [
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Superior Double Room",
+            price: 190,
+            typeOfBed: "King bed",
+            areaSize: 34,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Deluxe Twin Room",
+            price: 205,
+            typeOfBed: "Twin beds",
+            areaSize: 42,
+         },
+         {
+            id: nanoid(),
+            img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+            name: "Club Twin",
+            price: 330,
+            typeOfBed: "Double Sofa Bed",
+            areaSize: 48,
+         },
+      ],
+      meals: {
+         isBreakfastIncluded: false,
+         isDinnerIncluded: false,
+         isLunchIncluded:true,
+      },
+      amenities: {
+         isPoolIncluded: false,
+         isParkingIncluded: true,
+         isWIFIIncluded: false,
+      }
+   },
+
+   /////////////
    // {
-   //    id: 3,
+   //    id: nanoid(),
    //    isLiked: false,
    //    hotelName: "",
-   //    hotelImages: [""],
+   //    hotelPreDescription: "",
+   //    hotelImages: [
+   //       "",
+   //       "",
+   //       "",
+   //       "",
+   //       "",
+   //    ],
    //    hotelRating: 9.2,//rating from 1 to 10
    //    minCostPerNight: 200,
    //    priceOff: 0,
-   //    paymentType: "",
+   //    paymentType: "Reserve now, pay later",
    //    hotelDescription: "",
    //    hotelStarsCounter: 4,
+   //    hotelReviews: 1,
    //    hotelRoomsArr: [
    //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
+   //          id: nanoid(),
+   //          img: "https://images.trvl-media.com/lodging/1000000/810000/808300/808218/ae31f476.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+   //          name: "Superior Double Room",
+   //          price: 190,
+   //          typeOfBed: "King bed",
+   //          areaSize: 34,
+   //       },
    //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
+   //          id: nanoid(),
+   //          img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/fbf202c0.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+   //          name: "Deluxe Twin Room",
+   //          price: 205,
+   //          typeOfBed: "Twin beds",
+   //          areaSize: 42,
+   //       },
    //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
+   //          id: nanoid(),
+   //          img: "https://images.trvl-media.com/lodging/2000000/1040000/1030100/1030031/363e6026.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+   //          name: "Club Twin",
+   //          price: 330,
+   //          typeOfBed: "Double Sofa Bed",
+   //          areaSize: 48,
+   //       },
    //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
-   //    meals: {
-   //       isBreakfastIncluded: false,
-   //       isDinnerIncluded: false,
-   //       isLunchIncluded:false,
-   //    },
-   //    amenities: {
-   //       isPoolIncluded: false,
-   //       isParkingIncluded: false,
-   //       isWIFIIncluded: false,
-   //    }
-   // },
-   // {
-   //    id: 1,
-   //    isLiked: false,
-   //    hotelName: "",
-   //    hotelImages: [""],
-   //    hotelRating: 9.2,//rating from 1 to 10
-   //    minCostPerNight: 200,
-   //    priceOff: 0,
-   //    paymentType: "",
-   //    hotelDescription: "",
-   //    hotelStarsCounter: 4,
-   //    hotelRoomsArr: [
-   //       {
-   //          id:1,
-   //          name:"",
-   //          price:100,
-   //          typeOfBed:"King bad",
-   //          areaSize: 13,// how many sq m
-   //          howManyLeft: 3,
-   //       }
-   //    ],
-   //    hotelReviews: 10,
    //    meals: {
    //       isBreakfastIncluded: false,
    //       isDinnerIncluded: false,

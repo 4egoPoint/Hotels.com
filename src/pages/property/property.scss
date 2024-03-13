@@ -1,0 +1,51 @@
+.property {
+   &__header {
+      height: 70px;
+      background-color: white;
+
+      display: flex;
+      align-items: center;
+      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+      .property__header-wrapper {
+         padding: 20px;
+         max-width: 1400px;
+         flex: 1;
+         margin: auto;
+      }
+   }
+
+   .property__wrapper {
+      width: 1220px;
+      padding: 100px 0;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+
+      h2 {
+         text-align: center;
+      }
+
+      p {
+         text-align: center;
+         width: 60%;
+      }
+      .property__row{
+         display: flex;
+         align-items: center;
+         justify-content: space-around;
+         .property__item{
+            width: 32%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            img{
+               height: 150px;
+            }
+         }
+      }
+   }
+}

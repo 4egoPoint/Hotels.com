@@ -9,6 +9,8 @@ import { Provider } from "react-redux"
 import Rewards from './pages/rewards/Rewards';
 import Accomodation from './pages/accomodation/AccomodationPage';
 import Getapp from './pages/getapp/Getapp';
+import Property from './pages/property/Property';
+import Trips from './pages/trips/Trips';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/getapp",
         element: <Getapp />
+      },
+      {
+        path: "/trips",
+        element: <Trips />
       },
     ]
   },
