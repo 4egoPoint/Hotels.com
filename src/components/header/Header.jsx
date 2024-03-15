@@ -10,17 +10,17 @@ import { Link } from "react-router-dom";
 const routesArr = [
    {
       id: 1,
-      navType: "link",
+      navType: "route",
       name: "List your property",
-      link: "/property",
-      route: "",
+      link: "",
+      route: "/property",
    },
    {
       id: 2,
       navType: "route",
       name: "Support",
       link: "",
-      route: "",
+      route: "/support",
    },
    {
       id: 3,

@@ -5,6 +5,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = [
    {
       id: nanoid(),
+      location: "warsaw",
       isLiked: false,
       hotelName: "Regent Warsaw Hotel",
       hotelPreDescription: "Luxury hotel in Srodmiescie with spa and indoor pool",
@@ -61,6 +62,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "poznan",
       isLiked: false,
       hotelName: "InterContinental Warsaw, an IHG Hotel",
       hotelPreDescription: "Luxury Warsaw hotel with full-service spa, connected to the convention centre",
@@ -117,6 +119,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "katiwice",
       isLiked: false,
       hotelName: "Holiday Inn Warsaw City Centre, an IHG Hotel",
       hotelPreDescription: "Hotel with restaurant, near Palace of Culture and Science",
@@ -173,6 +176,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "warsaw",
       isLiked: false,
       hotelName: "Apartamenty Złota by Sun & Snow",
       hotelPreDescription: "Upmarket Centrum apartment with kitchenette",
@@ -229,6 +233,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "poznan",
       isLiked: false,
       hotelName: "Hit Hotel",
       hotelPreDescription: "Praga Polnoc hotel with restaurant and bar/lounge",
@@ -285,6 +290,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "katowice",
       isLiked: false,
       hotelName: "Media Park",
       hotelPreDescription: "Comfortable Warsaw apartments with kitchens",
@@ -341,6 +347,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "warsaw",
       isLiked: false,
       hotelName: "Logos",
       hotelPreDescription: "Riverfront hotel in Centrum with 2 restaurants and bar/lounge",
@@ -397,6 +404,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "poznan",
       isLiked: false,
       hotelName: "UNIT Warszawa Centrum Room by Metro Rondo ONZ",
       hotelPreDescription: "Adults-only apartment in Centrum with restaurant",
@@ -453,6 +461,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "katowice",
       isLiked: false,
       hotelName: "Barceló Warsaw Powiśle",
       hotelPreDescription: "Hotel with restaurant, near Copernicus Science Centre",
@@ -509,6 +518,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "warsaw",
       isLiked: false,
       hotelName: "RentPlanet - Apartamenty Wolska",
       hotelPreDescription: "Guesthouse in Wola",
@@ -565,6 +575,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "poznan",
       isLiked: false,
       hotelName: "Mamaison Le Regina Boutique Hotel",
       hotelPreDescription: "Luxury hotel in Srodmiescie with spa and indoor pool",
@@ -621,6 +632,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "katowice",
       isLiked: false,
       hotelName: "Sofitel Warsaw Victoria",
       hotelPreDescription: "Luxury hotel in Centrum with spa and indoor pool",
@@ -677,6 +689,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "warsaw",
       isLiked: false,
       hotelName: "Oki Doki OLD TOWN",
       hotelPreDescription: "Warsaw hotel with restaurant and bar/lounge",
@@ -733,6 +746,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "poznan",
       isLiked: false,
       hotelName: "Sheraton Grand Warsaw",
       hotelPreDescription: "Luxury hotel in Centrum with spa and restaurant",
@@ -789,6 +803,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "katiwice",
       isLiked: false,
       hotelName: "Vola Residence",
       hotelPreDescription: "Aparthotel with restaurant, near Warsaw Uprising Museum",
@@ -845,6 +860,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "wrotslaw",
       isLiked: false,
       hotelName: "Mamaison Le Regina Boutique Hotel",
       hotelPreDescription: "Luxury hotel in Srodmiescie with spa and indoor pool",
@@ -901,6 +917,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "wrotslaw",
       isLiked: false,
       hotelName: "Great City Center Apartment by Renters",
       hotelPreDescription: "Upmarket Warsaw apartment with kitchen",
@@ -957,6 +974,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "wrotslaw",
       isLiked: false,
       hotelName: "Metropol Hotel",
       hotelPreDescription: "Centrum hotel with restaurant and bar/lounge",
@@ -1013,6 +1031,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "wrotslaw",
       isLiked: false,
       hotelName: "POLECZKI RESIDENCE APARTMENTS",
       hotelPreDescription: "Warsaw apartment with restaurant and bar/lounge",
@@ -1069,6 +1088,7 @@ const initialState = [
    },
    {
       id: nanoid(),
+      location: "wrotslaw",
       isLiked: false,
       hotelName: "Castle Inn",
       hotelPreDescription: "City centre Old Town Warsaw hotel with bar/lounge",

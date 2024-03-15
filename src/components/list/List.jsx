@@ -15,6 +15,7 @@ const List = () => {
       return <Singlehotel
          key={item.id}
          id={item.id}
+         location={item.location}
          isLiked={item.isLiked}
          hotelName={item.hotelName}
          hotelImages={item.hotelImages}

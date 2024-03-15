@@ -11,6 +11,7 @@ import Accomodation from './pages/accomodation/AccomodationPage';
 import Getapp from './pages/getapp/Getapp';
 import Property from './pages/property/Property';
 import Trips from './pages/trips/Trips';
+import Support from './pages/support/Support';
 
 const router = createBrowserRouter([
   {
@@ -33,13 +34,20 @@ const router = createBrowserRouter([
         path: "/trips",
         element: <Trips />
       },
+      {
+        path: "/support",
+        element: <Support />
+      },
     ]
   },
   {
     path: "/rewards",
     element: <Rewards />
   },
-  
+  {
+    path: "/property",
+    element: <Property />
+  },
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

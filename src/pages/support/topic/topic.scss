@@ -1,0 +1,28 @@
+.topic{
+   background-color: white;
+   border: 1px solid lightgray;
+   &__title{
+      padding: 15px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      background-color: aliceblue;
+   }
+   &__text{
+      padding: 10px;
+   }
+   &__feedback{
+      padding: 12px;
+      div{
+         display: flex;
+         gap: 10px;
+         button{
+            cursor: pointer;
+            padding: 5px 7px;
+            background-color: transparent;
+            border: 1px solid gray;
+            border-radius: 6px;
+         }
+      }
+   }
+}
