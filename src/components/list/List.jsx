@@ -8,6 +8,7 @@ import "./list.scss"
 import { useSelector } from "react-redux"
 import Comertial from "./components/comertial/Comertial"
 import Singlehotel from "./components/singlehotel/Singlehotel"
+import { IoSadOutline } from "react-icons/io5";
 
 const List = () => {
    const hotelsArr = useSelector(state => state.hotelsList)
@@ -53,7 +54,6 @@ const List = () => {
          />
       }
    }
-
    return (
       <div className="list">
          <div className="list__wrapper">
@@ -72,6 +72,7 @@ const List = () => {
                      {
                         hotelsArr.map((item) => filterArrItem(item))
                      }
+                     <div className="list__list-bg"><IoSadOutline />There is no hotels like this<IoSadOutline /></div>
                   </div>
                </div>
             </div>

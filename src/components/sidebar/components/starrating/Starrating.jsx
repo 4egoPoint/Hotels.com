@@ -1,30 +1,36 @@
 
 
-import React from 'react'
+import "./starrating.scss"
+import { MdOutlineStar } from "react-icons/md";
 
-const Beadrooms = () => {
+const Starrating = () => {
    return (
       <div className="sidebar__filter">
-         <div className="sidebar__headline" >Number of bedrooms</div >
+         <div className="sidebar__headline" > Property class</div >
          <div className="sidebar__starrating">
             <button className="sidebar__starrating-item sidebar__starrating-item--active">
-               <div>Studio</div>
+               <span>1</span>
+               <MdOutlineStar />
             </button>
             <button className="sidebar__starrating-item">
-               <div>1</div>
+               <span>2</span>
+               <MdOutlineStar />
             </button>
             <button className="sidebar__starrating-item">
-               <div>2</div>
+               <span>3</span>
+               <MdOutlineStar />
             </button>
             <button className="sidebar__starrating-item">
-               <div>3</div>
+               <span>4</span>
+               <MdOutlineStar />
             </button>
             <button className="sidebar__starrating-item">
-               <div>4+</div>
+               <span>5</span>
+               <MdOutlineStar />
             </button>
          </div>
       </div >
    )
 }
 
-export default Beadrooms
+export default Starrating

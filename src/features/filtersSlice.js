@@ -23,15 +23,19 @@ export const filtersSlice = createSlice({
          isWIFIIncluded: false,
       },
       hotelStars: [1,2,3],
+      tempraryArr: []
    },
    reducers: {
       changeHotelNamePropery: (state, action) => {
          state.hotelName = action.payload
       },
+      addFilteredHotel: (state, action) => {
+         state.tempraryArr = [...action.payload]
+      }
    }
 })
 
 
-export const { changeHotelNamePropery } = filtersSlice.actions
+export const { changeHotelNamePropery, addFilteredHotel } = filtersSlice.actions
 
 export default filtersSlice.reducer

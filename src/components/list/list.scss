@@ -25,7 +25,17 @@
             .list__list{
                display: flex;
                flex-direction: column;
+               position: relative;
                gap: 14px;
+               .list__list-bg{
+                  position: absolute;
+                  padding: 10px;
+                  font-size: 20px;
+                  z-index: 1;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+               }
             }
          }
       }

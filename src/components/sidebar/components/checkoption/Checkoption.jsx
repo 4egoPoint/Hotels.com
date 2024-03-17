@@ -1,6 +1,6 @@
 
 
-import React from 'react'
+import "./checkoption.scss"
 
 const Checkoption = ({ name, func}) => {
 

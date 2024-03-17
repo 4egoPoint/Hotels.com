@@ -1,15 +1,15 @@
 
 
 import "./sidebar.scss"
-import Map from "./components/Map"
-import Checkbox from "./components/Checkbox";
+import Map from "./components/map/Map"
+import Checkbox from "./components/checkbox/Checkbox";
 import Search from "./components/search/Search";
-import Checkoption from "./components/Checkoption";
-import Price from "./components/Price";
+import Checkoption from "./components/checkoption/Checkoption";
+import Price from "./components/price/Price";
 import Radio from "./components/radio/Radio";
-import Starrating from "./components/Starrating";
-import Filtergrup from "./components/Filtergrup";
-import Beadrooms from "./components/Beadrooms";
+import Starrating from "./components/starrating/Starrating";
+import Filtergrup from "./Filtergrup";
+import Beadrooms from "./components/beadrooms/Beadrooms";
 
 
 const popularFilters = [

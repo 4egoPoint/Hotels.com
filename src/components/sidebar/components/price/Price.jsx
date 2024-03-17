@@ -1,6 +1,6 @@
 
 
-import React from 'react'
+import "./price.scss"
 
 const Price = () => {
    const focusOnInput = (idName) => {

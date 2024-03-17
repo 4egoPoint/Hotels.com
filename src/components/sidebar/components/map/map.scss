@@ -1,0 +1,28 @@
+.sidebar__map {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   border: 1px solid rgb(233, 233, 233);
+   border-radius: 20px;
+   overflow: hidden;
+   align-items: center;
+   text-decoration: none;
+   background-color: white;
+
+   img {
+      object-fit: cover;
+      width: 100%;
+      height: 100px;
+   }
+
+   p {
+      font-size: 15px;
+      color: blue;
+      text-decoration: none;
+      padding: 8px;
+
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+}

@@ -1,7 +1,7 @@
 
 
 import React from 'react'
-import Checkoption from "./Checkoption";
+import Checkoption from "./components/checkoption/Checkoption";
 
 const Filtergrup = ({headline, arr}) => {
    return (
