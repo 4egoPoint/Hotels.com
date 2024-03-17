@@ -50,46 +50,6 @@
       }
    }
 
-   .sidebar__search-block {
-      padding: 20px 0;
-      border-top: 1px solid rgb(205, 203, 203);
-      border-bottom: 1px solid rgb(205, 203, 203);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .sidebar__title {
-         width: 100%;
-         text-align: left;
-         font-size: 20px;
-         margin-bottom: 6px;
-      }
-
-      .sidebar__searchbar {
-         width: 100%;
-         display: flex;
-         align-items: center;
-         padding: 0 0 0 10px;
-         font-size: 20px;
-         background-color: white;
-         border: 1px solid rgb(161, 160, 160);
-         border-radius: 10px;
-         overflow: hidden;
-
-         input {
-            flex: 1;
-            height: 46px;
-            padding: 0 0 0 5px;
-            border: none;
-            letter-spacing: 1px;
-
-            &:focus {
-               outline: none;
-            }
-         }
-      }
-   }
-
    .sidebar__filters {
       display: flex;
       flex-direction: column;
@@ -147,30 +107,6 @@
             }
          }
 
-         .sidebar__radio-box {
-            padding: 6px 0 0 6px;
-
-            .sidebar__radio {
-               margin-bottom: 6px;
-               cursor: pointer;
-               display: grid;
-               grid-template-columns: 1em auto;
-               gap: 0.5em;
-               line-height: 1.1;
-
-               input[type="radio"] {
-                  appearance: none;
-                  background-color: #fff;
-                  font: inherit;
-                  color: currentColor;
-                  width: 1.15em;
-                  height: 1.15em;
-                  border: 2px solid gray;
-                  border-radius: 50%;
-                  transform: translateY(-0.075em);
-               }
-            }
-         }
 
          .sidebar__starrating {
             width: 100%;

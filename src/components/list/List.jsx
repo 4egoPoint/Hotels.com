@@ -11,25 +11,47 @@ import Singlehotel from "./components/singlehotel/Singlehotel"
 
 const List = () => {
    const hotelsArr = useSelector(state => state.hotelsList)
+   const hotelsFilters = useSelector(state => state.filters)
    const filterArrItem = (item) => {
-      return <Singlehotel
-         key={item.id}
-         id={item.id}
-         location={item.location}
-         isLiked={item.isLiked}
-         hotelName={item.hotelName}
-         hotelImages={item.hotelImages}
-         hotelRating={item.hotelRating}
-         minCostPerNight={item.minCostPerNight}
-         priceOff={item.priceOff}
-         paymentType={item.paymentType}
-         hotelDescription={item.hotelDescription}
-         hotelStarsCounter={item.hotelStarsCounter}
-         hotelRoomsArr={item.hotelRoomsArr}
-         hotelReviews={item.hotelReviews}
-         meals={item.meals}
-         amenities={item.amenities}
-      />
+      if (hotelsFilters.hotelName === "") {
+         return <Singlehotel
+            key={item.id}
+            id={item.id}
+            location={item.location}
+            isLiked={item.isLiked}
+            hotelName={item.hotelName}
+            hotelImages={item.hotelImages}
+            hotelRating={item.hotelRating}
+            minCostPerNight={item.minCostPerNight}
+            priceOff={item.priceOff}
+            paymentType={item.paymentType}
+            hotelDescription={item.hotelDescription}
+            hotelStarsCounter={item.hotelStarsCounter}
+            hotelRoomsArr={item.hotelRoomsArr}
+            hotelReviews={item.hotelReviews}
+            meals={item.meals}
+            amenities={item.amenities}
+         />
+      } else if (item.hotelName.toLowerCase().includes(hotelsFilters.hotelName.toLowerCase())) {
+         return <Singlehotel
+            key={item.id}
+            id={item.id}
+            location={item.location}
+            isLiked={item.isLiked}
+            hotelName={item.hotelName}
+            hotelImages={item.hotelImages}
+            hotelRating={item.hotelRating}
+            minCostPerNight={item.minCostPerNight}
+            priceOff={item.priceOff}
+            paymentType={item.paymentType}
+            hotelDescription={item.hotelDescription}
+            hotelStarsCounter={item.hotelStarsCounter}
+            hotelRoomsArr={item.hotelRoomsArr}
+            hotelReviews={item.hotelReviews}
+            meals={item.meals}
+            amenities={item.amenities}
+         />
+      }
    }
 
    return (

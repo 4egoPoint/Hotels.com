@@ -4,6 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const filtersSlice = createSlice({
    name: 'filters',
    initialState: {
+      hotelName: "",
       sortBy: "",//type of sorting         
       likedOnly: false,
       minRating: 9.0,
@@ -24,19 +25,13 @@ export const filtersSlice = createSlice({
       hotelStars: [1,2,3],
    },
    reducers: {
-      increment: state => {
-         state.value += 1
+      changeHotelNamePropery: (state, action) => {
+         state.hotelName = action.payload
       },
-      decrement: state => {
-         state.value -= 1
-      },
-      incrementByAmount: (state, action) => {
-         state.value += action.payload
-      }
    }
 })
 
 
-export const { increment, decrement, incrementByAmount } = filtersSlice.actions
+export const { changeHotelNamePropery } = filtersSlice.actions
 
 export default filtersSlice.reducer

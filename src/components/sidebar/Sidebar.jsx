@@ -3,10 +3,10 @@
 import "./sidebar.scss"
 import Map from "./components/Map"
 import Checkbox from "./components/Checkbox";
-import Search from "./components/Search";
+import Search from "./components/search/Search";
 import Checkoption from "./components/Checkoption";
 import Price from "./components/Price";
-import Radio from "./components/Radio";
+import Radio from "./components/radio/Radio";
 import Starrating from "./components/Starrating";
 import Filtergrup from "./components/Filtergrup";
 import Beadrooms from "./components/Beadrooms";
