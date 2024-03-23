@@ -12,6 +12,7 @@ import Getapp from './pages/getapp/Getapp';
 import Property from './pages/property/Property';
 import Trips from './pages/trips/Trips';
 import Support from './pages/support/Support';
+import HotelPage from './pages/hotelpage/HotelPage';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />
+      },
+      {
+        path: "/hotels/:id",
+        element: <HotelPage />,
       },
       {
         path: "/accomodation",

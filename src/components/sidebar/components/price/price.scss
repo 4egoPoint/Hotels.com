@@ -13,6 +13,17 @@
       border: 1px solid gray;
       cursor: text;
 
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+         -webkit-appearance: none;
+         margin: 0;
+      }
+
+      /* Firefox */
+      input[type=number] {
+         -moz-appearance: textfield;
+      }
+
       h4 {
          font-size: 13px;
       }

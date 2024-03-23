@@ -10,6 +10,7 @@
    background-color: aliceblue;
 
    .singlehotel__img-side {
+      border: none;
       flex: 1;
       overflow: hidden;
       position: relative;
@@ -81,6 +82,7 @@
    }
 
    .info-side {
+      text-align: left;
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
       padding: 8px;

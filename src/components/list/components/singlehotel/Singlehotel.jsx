@@ -1,5 +1,6 @@
 
 import { changeLikedValue } from "../../../../features/hotelsSlice"
+import { setHotelPage } from "../../../../features/hotelpageSlice"
 import { Link } from "react-router-dom"
 import "./singlehotel.scss"
 import { useState } from "react"
@@ -9,14 +10,17 @@ import { useDispatch } from 'react-redux'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 
-const Singlehotel = ({ id, isLiked, hotelName, hotelImages, hotelRating, minCostPerNight, priceOff, paymentType, hotelDescription, hotelReviews }) => {
+const Singlehotel = ({ id, isLiked, hotelName, hotelImages, hotelRating, minCostPerNight, priceOff, paymentType, hotelDescription, hotelStarsCounter, hotelReviews }) => {
    const dispatch = useDispatch()
    const [howManyNights, setHowMenyNights] = useState(2)
    const [currPicture, setCurrPicture] = useState(0)
    const description = hotelDescription.substring(0, 70)
+   const setAHotelPage = () => {
+      dispatch(setHotelPage({ id, hotelName, hotelImages, hotelRating, minCostPerNight, priceOff, hotelDescription, hotelStarsCounter, hotelReviews }))
+   }
    const switchPicture = (side) => {
       if (side === "l") {
-         if(currPicture === 0){
+         if (currPicture === 0) {
             setCurrPicture(hotelImages.length - 1)
          } else {
             setCurrPicture(currPicture - 1)
@@ -30,10 +34,9 @@ const Singlehotel = ({ id, isLiked, hotelName, hotelImages, hotelRating, minCost
          }
       }
    }
-
    return (
-      <Link to="" className='singlehotel'>
-         <div className="singlehotel__img-side">
+      <Link to={`/hotels/${id}`} className='singlehotel'>
+         <button onClick={() => setAHotelPage()} className="singlehotel__img-side">
             {
                hotelImages.length !== 0 ? (
                   <img src={hotelImages[currPicture]} />
@@ -54,9 +57,9 @@ const Singlehotel = ({ id, isLiked, hotelName, hotelImages, hotelRating, minCost
                   </div>
                )
             }
-         </div>
+         </button>
 
-         <div className="singlehotel__info-side info-side">
+         <button onClick={() => setAHotelPage()} className="singlehotel__info-side info-side">
             <div className="info-side__top">
                <div className="info-side__main-info">
                   <h2 className="info-side__hotel-name">{hotelName}</h2>
@@ -96,7 +99,7 @@ const Singlehotel = ({ id, isLiked, hotelName, hotelImages, hotelRating, minCost
                </div>
             </div>
 
-         </div>
+         </button>
       </Link>
    )
 }

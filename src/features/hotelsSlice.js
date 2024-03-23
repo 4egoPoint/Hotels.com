@@ -2,6 +2,7 @@
 import { nanoid } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
 
+
 const initialState = [
    {
       id: nanoid(),
@@ -1209,7 +1210,7 @@ export const hotelsSlice = createSlice({
    reducers: {
       changeLikedValue: (state, action) => {
          state.map(item => item.id === action.payload ? item.isLiked = !item.isLiked : item.isLiked)
-      }
+      },
    }
 })
 
