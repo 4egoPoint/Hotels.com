@@ -1,0 +1,45 @@
+.toprow {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 10px 0;
+
+   .toprow__link {
+      margin-top: 5px;
+      padding: 5px;
+      height: 30px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 16px;
+      text-decoration: none;
+      color: blue;
+
+      span {
+         padding-bottom: 2px;
+      }
+
+      &:hover {
+         text-decoration: underline;
+         cursor: pointer;
+      }
+   }
+
+   .toprow__like-button {
+      cursor: pointer;
+      color: red;
+      display: flex;
+      font-size: 18px;
+      gap: 5px;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 100px;
+      border: 1px solid lightgray;
+
+      span {
+         font-size: 15px;
+         color: black;
+         padding-bottom: 2px;
+      }
+   }
+}

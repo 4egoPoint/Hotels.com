@@ -10,32 +10,46 @@ import { useDispatch } from 'react-redux'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 
-const Singlehotel = ({ id, isLiked, hotelName, hotelImages, hotelRating, minCostPerNight, priceOff, paymentType, hotelDescription, hotelStarsCounter, hotelReviews }) => {
+const Singlehotel = ({ id, isLiked, hotelName, hotelImages, hotelRating, minCostPerNight, priceOff, paymentType, hotelDescription, hotelStarsCounter, hotelReviews, hotelPreDescription }) => {
    const dispatch = useDispatch()
    const [howManyNights, setHowMenyNights] = useState(2)
    const [currPicture, setCurrPicture] = useState(0)
    const description = hotelDescription.substring(0, 70)
    const setAHotelPage = () => {
-      dispatch(setHotelPage({ id, hotelName, hotelImages, hotelRating, minCostPerNight, priceOff, hotelDescription, hotelStarsCounter, hotelReviews }))
+      dispatch(setHotelPage({ id, hotelName, hotelPreDescription, hotelImages, hotelRating, minCostPerNight, priceOff, hotelDescription, hotelStarsCounter, hotelReviews }))
    }
-   const switchPicture = (side) => {
+   const switchPicture = ({event, side}) => {
       if (side === "l") {
          if (currPicture === 0) {
+            event.preventDefault()
+            event.stopPropagation()
             setCurrPicture(hotelImages.length - 1)
          } else {
+            event.preventDefault()
+            event.stopPropagation()
             setCurrPicture(currPicture - 1)
          }
       }
       if (side === "r") {
          if ((hotelImages.length - 1) === currPicture) {
+            event.preventDefault()
+            event.stopPropagation()
             setCurrPicture(0)
          } else {
+            event.preventDefault()
+            event.stopPropagation()
             setCurrPicture(currPicture + 1)
          }
       }
    }
+   const likeHotel = (event) => {
+      event.preventDefault()
+      event.stopPropagation()
+      dispatch(changeLikedValue(id))
+   }
+   const a = `/hotels/${id}`
    return (
-      <Link to={`/hotels/${id}`} className='singlehotel'>
+      <Link to={a} className='singlehotel'>
          <button onClick={() => setAHotelPage()} className="singlehotel__img-side">
             {
                hotelImages.length !== 0 ? (
@@ -44,7 +58,7 @@ const Singlehotel = ({ id, isLiked, hotelName, hotelImages, hotelRating, minCost
                   <div className="singlehotel__img-holder"><SlPicture /></div>
                )
             }
-            <button onClick={() => dispatch(changeLikedValue(id))} className="singlehotel__heart-btn">
+            <button onClick={(event) => likeHotel(event)} className="singlehotel__heart-btn">
                {
                   !isLiked ? <FaRegHeart /> : <FaHeart />
                }
@@ -52,8 +66,8 @@ const Singlehotel = ({ id, isLiked, hotelName, hotelImages, hotelRating, minCost
             {
                hotelImages.length === 0 ? null : (
                   <div className="singlehotel__slider-bar">
-                     <button onClick={() => switchPicture("l")}><MdKeyboardArrowLeft /></button>
-                     <button onClick={() => switchPicture("r")}><MdKeyboardArrowRight /></button>
+                     <button onClick={(event) => switchPicture({event, side:"l"})}><MdKeyboardArrowLeft /></button>
+                     <button onClick={(event) => switchPicture({event, side:"r"})}><MdKeyboardArrowRight /></button>
                   </div>
                )
             }
@@ -77,7 +91,11 @@ const Singlehotel = ({ id, isLiked, hotelName, hotelImages, hotelRating, minCost
                   <div className="bottom__raitng">
                      <div className="bottom__rating-num">{hotelRating}</div>
                      <div className="bottom__inf">
-                        <div className="bottom__rating-word">Good</div>
+                        <div className="bottom__rating-word">
+                           {
+                              hotelRating < 8.5 ? "Good" : hotelRating < 9.2 ? "Wonderful" : "Exceptional"
+                           }
+                        </div>
                         <div className="bottom__reviews">{hotelReviews} reviews</div>
                      </div>
                   </div>

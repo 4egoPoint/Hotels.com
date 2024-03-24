@@ -1,0 +1,78 @@
+.filters{
+   display: flex;
+   margin-top: 14px;
+   align-items: center;
+   gap: 10px;
+   .filters__item{
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex: 1;
+      padding: 5px;
+      background-color: white;
+      border: 1px solid lightgray;
+      border-radius: 12px;
+      .filters__icon{
+         font-size: 20px;
+         padding: 7px;
+      }
+      .filters__text{
+         text-align: left;
+         flex: 1;
+         font-size: 15px;
+         .filters__headline{
+            font-size: 13px;
+            font-weight: 700;
+         }
+         .filters__value{}
+      }
+   }
+}
+.filters__caledar{
+   border: none;
+   background-color: rgba(0, 0, 0, 0.303);
+   top: 0;
+   left: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   z-index: 10;
+   height: 100dvh;
+   width: 100%;
+   position: fixed;
+   .filters__box{
+      padding: 15px 30px 30px 30px;
+      border-radius: 15px;
+      border: 1px solid lightgray;
+      background-color: white;
+      .filters__top{
+         margin-bottom: 5px;
+         display: flex;
+         flex-direction: row-reverse;
+         button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border: none;
+            font-size: 27px;
+            background-color: transparent;
+            color: red;
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 500px;
+            &:hover{
+               background-color: lightgray;
+            }
+         }
+      }
+      .filters__row{
+         display: flex;
+         gap: 10px;
+      }
+   }
+}

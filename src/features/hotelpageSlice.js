@@ -14,13 +14,13 @@ const initialState = {
    hotelStarsCounter: 5,
    hotelReviews: 0,
    meals: {
-      isBreakfastIncluded: true,
+      isBreakfastIncluded: false,
       isDinnerIncluded: false,
       isLunchIncluded: false,
    },
    amenities: {
       isPoolIncluded: false,
-      isParkingIncluded: true,
+      isParkingIncluded: false,
       isWIFIIncluded: false,
    }
 }
@@ -34,6 +34,7 @@ export const hotelpageSlice = createSlice({
       setHotelPage: (state, action) => {
          state.id = action.payload.id
          state.hotelName = action.payload.hotelName
+         state.hotelPreDescription = action.payload.hotelPreDescription
          state.hotelImages[0] = action.payload.hotelImages[0]
          state.hotelImages[1] = action.payload.hotelImages[1]
          state.hotelImages[2] = action.payload.hotelImages[2]

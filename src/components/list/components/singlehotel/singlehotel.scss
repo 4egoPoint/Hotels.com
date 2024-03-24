@@ -14,6 +14,7 @@
       flex: 1;
       overflow: hidden;
       position: relative;
+      z-index: 1;
 
       img {
          height: 100%;
@@ -50,20 +51,21 @@
          justify-content: center;
          background-color: whitesmoke;
       }
-
+      &:hover .singlehotel__slider-bar{
+         display: flex;
+      }
       .singlehotel__slider-bar {
          position: absolute;
-         display: flex;
+         display: none;
          width: 100%;
          justify-content: space-between;
          top: 120px;
          padding: 0 10px;
          background-color: transparent;
-
          button {
             cursor: pointer;
             border-radius: 200px;
-            z-index: 14;
+            z-index: 200;
             display: flex;
             align-items: center;
             justify-content: center;

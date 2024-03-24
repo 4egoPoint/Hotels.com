@@ -1,0 +1,17 @@
+.reserve{
+   .reserve__headline{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      div{
+         text-decoration: underline;
+         font-weight: 500;
+         font-size: 15px;
+      }
+   }
+   .reserve__rooms{
+      margin-top: 20px;
+      display: flex;
+      gap: 14px;
+   }
+}

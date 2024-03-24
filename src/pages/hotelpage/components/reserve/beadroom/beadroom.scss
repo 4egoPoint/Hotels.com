@@ -1,0 +1,113 @@
+.beadroom {
+   border: 1px solid lightgray;
+   flex: 1;
+   overflow: hidden;
+   border-radius: 10px;
+
+   img {
+      width: 100%;
+   }
+
+   .beadroom__info {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid lightgrey;
+      gap: 5px;
+
+      .beadroom__name {
+         font-size: 120%;
+      }
+
+      .beadroom__option {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+      }
+   }
+
+   .beadroom__price {
+      display: flex;
+      gap: 5px;
+
+      .text {
+         flex: 1;
+
+         .bottom__right {
+            padding: 5px 5px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+
+            .bottom__sale {
+               padding: 2px 5px 3px;
+               border-radius: 5px;
+               background-color: rgb(214, 13, 13);
+               color: white;
+               width: fit-content;
+               font-size: 13px;
+               font-weight: 500;
+            }
+
+            .bottom__prices {
+               display: flex;
+               padding: 2px;
+               gap: 8px;
+               align-items: center;
+
+               .bottom__normal-price {
+                  font-size: 13px;
+                  text-decoration: line-through;
+
+                  span {
+                     text-decoration: underline;
+                  }
+               }
+
+               .bottom__final-price {
+                  font-size: 19px;
+                  font-weight: 500;
+               }
+            }
+
+            .bottom__time-period {
+               font-size: 11px;
+            }
+
+            .bottom__price-per-night {
+               font-weight: 500;
+               font-size: 14px;
+            }
+
+            .bottom__policy {
+               font-size: 11px;
+            }
+         }
+      }
+
+      .beadroom__button {
+         flex: 1;
+         display: flex;
+         flex-direction: column-reverse;
+         align-items: end;
+         padding: 10px;
+
+         button {
+            cursor: pointer;
+            height: fit-content;
+            width: fit-content;
+            background-color: rgb(43, 43, 225);
+            border: none;
+            border-radius: 200px;
+            color: white;
+            padding: 8px 16px;
+            font-weight: 600;
+
+            &:hover {
+               background-color: rgb(34, 34, 158);
+            }
+         }
+      }
+   }
+}

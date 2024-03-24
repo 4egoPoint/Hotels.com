@@ -9,7 +9,6 @@ import { useSelector } from "react-redux"
 import Comertial from "./components/comertial/Comertial"
 import Singlehotel from "./components/singlehotel/Singlehotel"
 import { IoSadOutline } from "react-icons/io5";
-import { useState } from "react"
 
 const List = () => {
    const hotelsArr = useSelector(state => state.hotelsList)
@@ -48,7 +47,6 @@ const List = () => {
          return item
       },
       checkPrice: (item) => {
-         console.log(item.minCostPerNight)
          if(item === false) return false
          if(hotelsFilters.minPrice !== 0){
             if(item.minCostPerNight > hotelsFilters.minPrice) return item
@@ -105,6 +103,7 @@ const List = () => {
             id={item.id}
             isLiked={item.isLiked}
             hotelName={item.hotelName}
+            hotelPreDescription={item.hotelPreDescription}
             hotelImages={item.hotelImages}
             hotelRating={item.hotelRating}
             minCostPerNight={item.minCostPerNight}

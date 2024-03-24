@@ -1,1 +1,18 @@
-.hotelpage{}
+.hotelpage{
+   &__wrapper{
+      width: 1220px;
+      margin: auto;
+      display: flex;
+      .hotelpage__column{
+         flex: 5;
+      }
+      .hotelpage__holder{
+         flex: 1;
+      }
+   }
+}
+.hotelpage__sicky{
+   position: sticky;
+   top: 0;
+   z-index: 4;
+}

@@ -36,7 +36,7 @@ const Footer = () => {
    return (
       <div className='footer'>
          <div className="footer__wrapper">
-            <div className="footer__title"><img src="expedia.svg"/></div>
+            <div className="footer__title"><img src="https://a.travel-assets.com/globalcontrols-service/content/f285fb631b0a976202ef57611c7050e9ef5ca51a/images/EG_Wordmark_blue_RGB.svg"/></div>
             <div className="footer__box">
                <div className="footer__column">
                   <div className="footer__subtitle">Top destinations</div>

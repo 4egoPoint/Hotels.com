@@ -1,0 +1,21 @@
+.info__raiting {
+   .info__raiting-top {
+      display: flex;
+      gap: 6px;
+
+      .info__raiting-num {
+         padding: 2px 6px 3px;
+         background-color: rgb(15, 107, 3);
+         color: white;
+         font-size: 14px;
+         border-radius: 4px;
+      }
+
+      .info__raiting-text {
+         font-weight: 500;
+         font-size: 18px;
+      }
+   }
+
+   .info__raiting-views {}
+}
