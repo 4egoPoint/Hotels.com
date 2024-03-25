@@ -15,6 +15,14 @@
       align-items: center;
       justify-content: space-between;
 
+      @media (max-width: 1240px) {
+         width: 920px;
+      }
+
+      @media (max-width: 930px) {
+         width: 100%;
+      }
+
       .header__logo-bar {
          position: relative;
          display: flex;
@@ -27,6 +35,7 @@
             color: black;
             font-size: 30px;
             font-weight: bold;
+
             span {
                font-size: 15px;
             }
@@ -78,6 +87,10 @@
          display: flex;
          align-items: center;
          gap: 10px;
+
+         @media (max-width: 930px) {
+            display: none;
+         }
 
          .header__get-app {
             text-decoration: none;
@@ -162,7 +175,8 @@
                   -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.4);
                   -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.4);
                   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.4);
-                  .element__btn-blue{
+
+                  .element__btn-blue {
                      border: none;
                      width: 100%;
                      height: 30px;
@@ -173,9 +187,13 @@
                      border-radius: 50px;
                      color: white;
                      background-color: rgb(65, 65, 248);
-                     &:hover{background-color: rgb(46, 46, 247);}
+
+                     &:hover {
+                        background-color: rgb(46, 46, 247);
+                     }
                   }
-                  .element__btn{
+
+                  .element__btn {
                      border: none;
                      background: transparent;
                      width: 100%;
@@ -185,6 +203,7 @@
                      align-items: center;
                      cursor: pointer;
                      color: red;
+
                      &:hover {
                         color: rgb(205, 7, 7);
                      }
@@ -205,4 +224,99 @@
    background-color: transparent;
    height: 100vh;
    width: 100%;
+}
+
+.a{
+   color: white;
+   text-decoration: none;
+   font-size: 23px;
+   padding: 10px;
+   text-align: center;
+   display: flex;
+   align-items: center;
+   gap: 6px;
+   span{
+      padding: 5px 5px 10px;
+   }
+}
+.bm-burger-button {
+   position: fixed;
+   width: 36px;
+   height: 30px;
+   right: 36px;
+   top: 22px;
+   display: none;
+   @media (max-width: 930px) {
+      display: block;
+   }
+}
+.katalizator__menu{
+   display: none;
+   @media (max-width: 930px) {
+      display: block;
+   }
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+   background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+   background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+   height: 24px;
+   width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+   background: #bdc3c7;
+}
+
+/*
+ Sidebar wrapper styles
+ Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+ */
+.bm-menu-wrap {
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+   // position: absolute;
+   background: #373a47;
+   padding: 2.5em 1.5em 0;
+   font-size: 1.15em;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+   fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+   color: #b8b7ad;
+   padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+   display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+   background: rgba(0, 0, 0, 0.3);
 }

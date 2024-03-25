@@ -1,12 +1,19 @@
 .hotelpage{
    &__wrapper{
       width: 1220px;
+      padding: 0 10px;
       margin: auto;
       display: flex;
+      @media (max-width: 1230px) {
+         width: 100%;
+      }
       .hotelpage__column{
          flex: 5;
       }
       .hotelpage__holder{
+         @media (max-width: 1230px) {
+            display: none;
+         }
          flex: 1;
       }
    }

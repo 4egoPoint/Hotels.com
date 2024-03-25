@@ -7,7 +7,7 @@ import List from "../../components/list/List"
 const Home = () => {
    return (
       <div className='home'>
-         <Search />
+         {/* <Search /> */}
          <List />
       </div>
    )

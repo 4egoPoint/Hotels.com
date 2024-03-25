@@ -73,6 +73,12 @@
       .filters__row{
          display: flex;
          gap: 10px;
+         @media (max-width: 700px) {
+            flex-direction: column;
+         }
       }
    }
+}.react-calendar{
+   width: 300px;  
+   height: 250px;
 }

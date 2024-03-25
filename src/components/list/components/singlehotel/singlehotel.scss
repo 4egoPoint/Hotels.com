@@ -8,6 +8,10 @@
    overflow: hidden;
    color: black;
    background-color: aliceblue;
+   @media (max-width: 600px) {
+      // flex-direction: column;
+   }
+   // width: 100px;
 
    .singlehotel__img-side {
       border: none;
