@@ -1,0 +1,49 @@
+.accessibility {
+   display: flex;
+   gap: 15px;
+
+   .accessibility__main {
+      flex: 1;
+      padding: 20px 0 20px 20px;
+
+      .accessibility__main-title {
+         font-weight: 500;
+         font-size: 25px;
+         margin-bottom: 6px;
+      }
+
+      .accessibility__main-text {
+         font-size: 15px;
+         font-weight: 300;
+      }
+   }
+
+   .accessibility__box {
+      flex: 2;
+      display: flex;
+      .accessibility__block {
+         flex: 1;
+         margin-top: 20px;
+         padding: 10px;
+         display: flex;
+         flex-direction: column;
+         gap: 7px;
+
+         .accessibility__headline {
+            font-size: 20px;
+
+            // display: flex;
+            span {
+               margin-left: 10px;
+               font-weight: 500;
+            }
+         }
+
+         p {
+            margin-left: 30px;
+            font-size: 15px;
+            font-weight: 300;
+         }
+      }
+   }
+}

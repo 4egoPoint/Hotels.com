@@ -1,0 +1,15 @@
+.policies{
+   .policies__title-box{
+      flex: 1;
+      padding: 20px;
+      .policies__title{
+         font-weight: 500;
+         font-size: 25px;
+      }
+   }
+   .policies__box{
+      flex: 2;
+      margin-top: 20px;
+      padding: 10px;
+   }
+}

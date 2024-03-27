@@ -1,0 +1,32 @@
+.description{
+   display: flex;
+   border-top: 1px solid lightgray;
+   margin-top: 10px;
+   .description__title-box{
+      flex: 1;
+      padding: 20px;
+      .description__title{
+         font-weight: 500;
+         font-size: 25px;
+      }
+   }
+   .description__content{
+      flex: 2;
+      padding: 10px;
+      margin-top: 20px;
+      .description__w-limit{
+         width: 90%;
+         .description__headline{
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            margin-bottom: 8px;
+         }
+         .description__text{
+            font-size: 15px;
+            font-weight: 300;
+            margin-bottom: 15px;
+         }
+      }
+   }
+}

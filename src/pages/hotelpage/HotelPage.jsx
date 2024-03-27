@@ -8,7 +8,10 @@ import Images from "./components/images/Images";
 import Navigator from "./components/navigator/Navigator";
 import Info from "./components/info/Info";
 import Reserve from "./components/reserve/Reserve";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import Description from "./components/description/Description";
+import Accessibility from "./components/accessibility/Accessibility";
+import Policies from "./components/policies/Policies";
 
 const HotelPage = () => {
    const hotelObject = useSelector(state => state.hotelPage)
@@ -33,7 +36,9 @@ const HotelPage = () => {
                />
                <Comertial />
                <Reserve minCostPerNight={hotelObject.minCostPerNight} />
-               
+               <Description hotelName={hotelObject.hotelName} hotelDescription={hotelObject.hotelDescription} />
+               <Accessibility />
+               <Policies />
             </div>
             <div className="hotelpage__holder"></div>
          </div>
