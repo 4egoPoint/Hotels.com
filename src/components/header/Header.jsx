@@ -12,31 +12,27 @@ import { FaArrowRight } from "react-icons/fa";
 const routesArr = [
    {
       id: 1,
-      navType: "route",
+      navType: "link",
       name: "List your property",
-      link: "",
-      route: "/property",
+      link: "/property",
    },
    {
       id: 2,
-      navType: "route",
+      navType: "link",
       name: "Support",
-      link: "",
-      route: "/support",
+      link: "/support",
    },
    {
       id: 3,
       navType: "link",
       name: "Trips",
       link: "/trips",
-      route: "/trips",
    },
    {
       id: 4,
       navType: "element",
       name: "Sign in",
       link: "",
-      route: "",
    },
 ]
 

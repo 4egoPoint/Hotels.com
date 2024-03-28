@@ -6,8 +6,9 @@
    display: flex;
    text-decoration: none;
    overflow: hidden;
-   color: black;
    background-color: aliceblue;
+   text-decoration: none;
+   color: black;
    @media (max-width: 600px) {
       // flex-direction: column;
    }

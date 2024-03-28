@@ -6,12 +6,12 @@ import "./header.scss"
 const Nav = ({ navType, name, link, route, isSignInOpen, setIsSignInOpen }) => {
    if (navType === "link") {
       return (
-         <a href={link} className='link'>{name}</a>
+         <a target="_blanc"  href={link} className='link'>{name}</a>
       )
    }
    if (navType === "route") {
       return (
-         <Link to={route} className="route">{name}</Link>
+         <Link target="_blanc" to={route} className="route">{name}</Link>
       )
    }
    if (navType === "element") {
